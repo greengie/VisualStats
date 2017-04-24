@@ -1,0 +1,10 @@
+.correlationMatrix rect{
+  stroke: black;
+  stroke-width: 0;
+}
+
+.cell text {
+    font: 10px sans-serif;
+    text-anchor: middle;
+    display:none;
+}

@@ -1,0 +1,44 @@
+.lineChart .path1 {
+  fill: none;
+  stroke: #5357a1;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.lineChart .path2 {
+  fill: none;
+  stroke: #00e6e6;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.lineChart .path3 {
+  fill: none;
+  stroke: #00ff80;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.lineChart .highlight-mark-1 {
+  fill: #FA7F9F;
+  stroke: #891836;
+  stroke-width: 1px;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  padding: 2px;
+  font: 12px sans-serif;
+  color: darkblue;
+  font-weight: bold;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}

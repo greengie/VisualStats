@@ -1,0 +1,9 @@
+.window_show {
+height: 100%;
+margin: 0;
+overflow: hidden;
+}
+
+svg {
+  position: absolute;
+}

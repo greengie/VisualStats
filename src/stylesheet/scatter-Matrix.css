@@ -1,0 +1,7 @@
+.line {
+  fill: none;
+  stroke: #5357a1;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
