@@ -48,13 +48,14 @@ class Map extends Component {
                       return 'grey';
                   }
               };
-
+      // console.log(focusData);
        return(
          <g id='map'>
              {countries.features.map((country, i) => (
                <Country d={D(country)}
                         country={country}
                         mapId={idNameMap}
+                        data={focusData}
                         key={`${country.id}-${i}`}
                         isSource={isSource(country)}
                         style={{stroke: 'white',

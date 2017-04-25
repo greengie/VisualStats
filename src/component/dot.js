@@ -14,25 +14,16 @@ export default class Dot extends React.Component{
          .append('svg:title')
          .attr('id', 'tooltip');
 
-    var  formatNumber = d3.format(".5s");
+    var formatNumber = d3.format(".5s");
     let node = d3.select(this.refs.circle);
-    // let label = d3.select('.tooltip');
     this.setState({hoverOn: true});
-    // console.log(this.props.x);
-    // console.log(this.props.y);
     node.transition()
         .attr('r', this.props.r*1.5)
         .duration(1000)
         .ease(d3Ease.easeCubicOut)
         .style("stroke-width", 3);
 
-    tooltip.text(this.props.name);
-    // tooltip.transition()
-    //   .duration(1000)
-    //   .style("opacity", .9);
-    // tooltip.html(this.props.name+"<br/>"+this.props.labelX+" : "+formatNumber(this.props.real_x)+"<br />"+this.props.labelY+" : "+formatNumber(this.props.real_y)+"<br />"+this.props.labelR+" : "+formatNumber(this.props.real_r))
-    //   .style("left", (this.props.x) + "px")
-    //   .style("top", (this.props.y+500) + "px");
+    tooltip.text(this.props.name+"\n"+this.props.labelX+" : "+formatNumber(this.props.real_x)+"\n"+this.props.labelY+" : "+formatNumber(this.props.real_y)+"\n"+this.props.labelR+" : "+formatNumber(this.props.real_r));
   }
   //
   flashOut(){

@@ -72,7 +72,7 @@ class sidebar extends Component {
       <NavItem eventKey={2} >Maps</NavItem>
       </LinkContainer>
       <LinkContainer to='/test/chart'>
-      <NavItem eventKey={3}>Chart</NavItem>
+      <NavItem eventKey={3}>Bubble Chart</NavItem>
       </LinkContainer>
       <LinkContainer to={'/test/regression/'+this.state.id}>
       <NavItem eventKey={4}>Regression</NavItem>
