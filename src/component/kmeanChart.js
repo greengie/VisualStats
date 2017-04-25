@@ -10,8 +10,8 @@ var value;
 
 class kmeanChart extends Component {
   state = {
-    valueSelect: '',
-    valueSelect2: '',
+    valueSelect: 'popdensity',
+    valueSelect2: 'work_hour_per_week',
     valueSelect_k:0
 
   }

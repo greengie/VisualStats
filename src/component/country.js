@@ -10,17 +10,19 @@ export default class Country extends React.Component{
   _onMouseOver(isSource, fill){
     // console.log(this.props.mapId[this.props.country.id]);
     // console.log(this.props.data.source[this.props.mapId[this.props.country.id]]);
+    // console.log(this.props.data.name);
+    var destination = this.props.data.name;
     if(this.props.data == undefined){
       var value = null;
     }else{
-      var value = this.props.data.source[this.props.mapId[this.props.country.id]];      
+      var value = this.props.data.source[this.props.mapId[this.props.country.id]];
     }
     var country_name = this.props.mapId[this.props.country.id];
     let node = d3.select(this.refs.country);
     let tooltip = d3.select('#map')
          .append('svg:title')
          .attr('id', 'tooltip');
-    tooltip.text(country_name+'\n'+'value : '+value);
+    tooltip.text(country_name+'\n'+'Migration To '+destination+' is '+value);
     if(isSource){
       node.style('stroke', fill)
           .style('stroke-width', 2)
