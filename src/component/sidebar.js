@@ -16,7 +16,6 @@ import Dashboard from './Dashboard'
 import Background from '../image/bg_chart.jpg'
 import Logout from './logout.js'
 
-
 import {Nav , NavItem, NavDropdown, MenuItem, Navbar} from 'react-bootstrap';
 import { Layout, Menu, Breadcrumb, Tabs, Icon } from 'antd';
 const { Header, Content, Footer } = Layout;
@@ -38,10 +37,9 @@ class sidebar extends Component {
       <Navbar inverse collapseOnSelect style={{backgroundImage: `url(${Background})`}}>
         <Navbar.Header>
           <Navbar.Brand>
-          <LinkContainer to='/'>
+          <LinkContainer to='/test'>
             <a  style={{color:'white', fontFamily: 'saxmono'}}>Visualization</a>
             </LinkContainer>
-
           </Navbar.Brand>
         </Navbar.Header>
         <Navbar.Collapse>
@@ -63,23 +61,25 @@ class sidebar extends Component {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    <Nav justified activeKey={1}>
-    <LinkContainer to='/test/dashboard'>
-      <NavItem eventKey={1}>Dashboard</NavItem>
-      </LinkContainer>
-
-      <LinkContainer to='/test/map'>
-      <NavItem eventKey={2} >Maps</NavItem>
-      </LinkContainer>
-      <LinkContainer to='/test/chart'>
-      <NavItem eventKey={3}>Bubble Chart</NavItem>
-      </LinkContainer>
-      <LinkContainer to={'/test/regression/'+this.state.id}>
-      <NavItem eventKey={4}>Regression</NavItem>
-      </LinkContainer>
-      <LinkContainer to={'/test/upload/'+this.state.id}>
-      <NavItem eventKey={5}>Upload</NavItem>
-      </LinkContainer>
+      <Nav justified activeKey={1}>
+        <LinkContainer to='/test/dashboard'>
+          <NavItem eventKey={1}>Dashboard</NavItem>
+        </LinkContainer>
+        <LinkContainer to='/test/map'>
+          <NavItem eventKey={2} >Map</NavItem>
+        </LinkContainer>
+        <LinkContainer to='/test/chart'>
+          <NavItem eventKey={3}>Bubble Chart</NavItem>
+        </LinkContainer>
+        <LinkContainer to={'/test/regression/'+this.state.id}>
+          <NavItem eventKey={4}>Regression</NavItem>
+        </LinkContainer>
+        <LinkContainer to={'/test/upload/'+this.state.id}>
+          <NavItem eventKey={5}>Upload</NavItem>
+        </LinkContainer>
+        <LinkContainer to={'/test/cluster'}>
+          <NavItem eventKey={6}>K-Mean</NavItem>
+        </LinkContainer>
       </Nav>
 
     {this.props.children}

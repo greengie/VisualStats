@@ -20,6 +20,7 @@ import Login_n from './component/login_n'
 import Chart from './component/chart'
 import Logout from './component/logout'
 import Regression from './component/regression'
+import kmeanChart from './component/kmeanChart'
 
 export default () => (
 	<Router history={browserHistory}>
@@ -30,6 +31,7 @@ export default () => (
 				<Route path='chart' component={Chart} />
 				<Route path='regression/:userid' component={Regression} />
 				<Route path='upload/:userid' component={Upload} />
+				<Route path='cluster' component={kmeanChart} />
 				<Route path='home' component={App} />
 			</Route>
 

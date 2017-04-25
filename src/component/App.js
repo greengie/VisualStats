@@ -39,7 +39,9 @@ class App extends Component {
                     <Navbar.Collapse>
                       <Nav>
                         <NavItem eventKey={1} href="#">
-                          <span style={styles.navItem}>HOME</span>
+                          <LinkContainer to='/'>
+                            <span style={styles.navItem}>HOME</span>
+                          </LinkContainer>
                         </NavItem>
                       </Nav>
                       <Nav pullRight>
