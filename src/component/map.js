@@ -37,8 +37,7 @@ class Map extends Component {
                            .range([0, 1]);
         }
 
-        const interpolateColor = d3.interpolateHsl("hsl(62,100%,90%)", "hsl(222,30%,20%)");
-
+        const interpolateColor = d3.scale.linear().domain([0, 1]).range(['hsl(57, 87%, 55%)', 'hsl(288, 98%, 17%)']);
         const isSource = (country) => sources.includes(idNameMap[country.id]),
               color = (country) => {
                   if (isSource(country) && focusData){
@@ -51,9 +50,11 @@ class Map extends Component {
               };
 
        return(
-         <g>
+         <g id='map'>
              {countries.features.map((country, i) => (
                <Country d={D(country)}
+                        country={country}
+                        mapId={idNameMap}
                         key={`${country.id}-${i}`}
                         isSource={isSource(country)}
                         style={{stroke: 'white',

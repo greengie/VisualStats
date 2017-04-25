@@ -8,7 +8,14 @@ export default class Country extends React.Component{
   }
 
   _onMouseOver(isSource, fill){
+    // console.log(this.props.country);
+    // console.log(this.props.mapId[this.props.country.id]);
+    var country_name = this.props.mapId[this.props.country.id];
     let node = d3.select(this.refs.country);
+    let tooltip = d3.select('#map')
+         .append('svg:title')
+         .attr('id', 'tooltip');
+    tooltip.text(country_name);
     if(isSource){
       node.style('stroke', fill)
           .style('stroke-width', 2)
@@ -22,7 +29,12 @@ export default class Country extends React.Component{
   }
 
   _onMouseOut(isSource, fill){
+    let label = d3.selectAll('#tooltip');
     let node = d3.select(this.refs.country);
+    label.transition()
+      .duration(0)
+      .style("opacity", 0)
+      .remove();
     if(!this.state.onClick){
       if(isSource){
         node.style('stroke', 'white')
@@ -32,7 +44,7 @@ export default class Country extends React.Component{
         node.style('stroke', 'white')
             .style('stroke-width', 0.25)
             .style('fill', fill);
-      }      
+      }
     }
   }
 

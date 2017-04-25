@@ -22,7 +22,7 @@ const CountryMigrations = ({ data, nameIdMap, centroids }) => {
                     .domain(d3.extent(sources.map(name => data.source[name])))
                     .range([0, 1]);
 
-    const interpolateColor = d3.interpolateHsl("hsl(62,100%,90%)", "hsl(222,30%,20%)");
+    const interpolateColor = d3.scale.linear().domain([0, 1]).range(['hsl(57, 87%, 55%)', 'hsl(288, 98%, 17%)']);
 
     const N = d3.scale.linear()
                 .domain(d3.extent(sources.map(name => data.source[name])))
@@ -90,6 +90,12 @@ const CountryMigrations = ({ data, nameIdMap, centroids }) => {
          const { width, height } = this.props,
                { topology } = this.state;
 
+         const lineargradient = (
+           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" spreadMethod="pad">
+            <stop offset='0%' stopColor='hsl(57, 87%, 55%)' stopOpacity='1'></stop>
+            <stop offset='100%' stopColor='hsl(288, 98%, 17%)' stopOpacity='1'></stop>
+           </linearGradient>
+         );
          let Maps;
          let Migration;
 
@@ -113,8 +119,17 @@ const CountryMigrations = ({ data, nameIdMap, centroids }) => {
         //  console.log(this.props.year);
 
          return (
-             <svg width={width} height={height}>
-              <text x='50' y='550' stroke={'Black'} fontSize={50}>{this.props.year}</text>
+             <svg ref='svg' width={width} height={height}>
+              <text x='50' y='500' stroke={'Black'} fontSize={50}>{this.props.year}</text>
+              <g id='legend-color' transform={'translate(30,520)'}>
+                <defs>{lineargradient}</defs>
+                <rect x1='0' y1='0' width='300' height='30' fill='url("#gradient")'></rect>
+              </g>
+              <g className='legend-axis' transform={'translate(30,560)'}>
+                <line x2="3" y2="0"></line>
+                <text dy=".32em" x="0" y="0" textAnchor='start'>0</text>
+                <text dy=".32em" x="275" y="0" textAnchor='start'>13000000</text>
+              </g>
               {Maps}
               {Migration}
            </svg>
