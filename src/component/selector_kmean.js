@@ -29,7 +29,7 @@ class selector_kmean extends Component {
     select: "",
     data:[]
   }
-  
+
 
   logChange(val) {
     console.log("Selected: " + val.value);
@@ -42,6 +42,7 @@ class selector_kmean extends Component {
           <Select
             name="form-field-name"
             options={data}
+            value={this.state.valueSelect}
             onChange={this.props.handleSelect}
             autofocus
           />

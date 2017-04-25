@@ -75,7 +75,6 @@ class Main_World extends Component {
                 onChange={this.changeFocusCountry.bind(this)} />
         </div>
 
-
           <World width={1440} height={600}
               data={this.state.data} nameIdMap={this.state.nameIdMap}
               focusCountry={this.state.focusCountry} year={this.state.value}

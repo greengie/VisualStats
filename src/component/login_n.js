@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import LoginHOC from 'react-facebook-login-hoc';
 import axios from 'axios';
+import '../stylesheet/bootstrap-social.css'
+import '../stylesheet/bootstrap.min.css'
+import '../stylesheet/login_button.css'
 import {Button, ButtonToolbar} from 'react-bootstrap';
-
-
 
 const Router = require('react-router');
 
@@ -77,9 +78,9 @@ class Login_n extends Component {
 
   render() {
     return (
-      <ButtonToolbar>
-        <Button bsStyle="primary" onClick={ this.loginFacebook.bind(this) }>Facebook Login</Button>
-      </ButtonToolbar>
+      <button class="loginBtn loginBtn--facebook" onClick={ this.loginFacebook.bind(this) }>
+        Login with Facebook
+      </button>
     );
   }
 }

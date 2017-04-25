@@ -18,8 +18,8 @@ class App extends Component {
         border : "transparent",
       },
       navItem: {
-        color:"white"
-
+        color:"white",
+        fontWeight:"bold"
       },
       },
     })
