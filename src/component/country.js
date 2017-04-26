@@ -13,7 +13,7 @@ export default class Country extends React.Component{
     // console.log(this.props.data.name);
     if(this.props.data == undefined){
       var value = null;
-      var destination = this.props.data.name;
+      var destination = null;
     }else{
       var value = this.props.data.source[this.props.mapId[this.props.country.id]];
       var destination = this.props.data.name;
