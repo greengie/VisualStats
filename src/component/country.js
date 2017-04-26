@@ -11,11 +11,12 @@ export default class Country extends React.Component{
     // console.log(this.props.mapId[this.props.country.id]);
     // console.log(this.props.data.source[this.props.mapId[this.props.country.id]]);
     // console.log(this.props.data.name);
-    var destination = this.props.data.name;
     if(this.props.data == undefined){
       var value = null;
+      var destination = this.props.data.name;
     }else{
       var value = this.props.data.source[this.props.mapId[this.props.country.id]];
+      var destination = this.props.data.name;
     }
     var country_name = this.props.mapId[this.props.country.id];
     let node = d3.select(this.refs.country);
